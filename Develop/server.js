@@ -85,7 +85,31 @@ app.post('/api/notes', (req, res) => {
 
 // ---------------------------------------------------------------------------------------------------------------------
 
+// DELETE THE NOTES
 
+app.delete('/api/notes/:id', (req, res)=> {
+
+const noteId = req.params.id;
+const newDb = db.filter(note => note.id !== noteId);
+
+if (newDb.length === db.length) {
+        return res.status(404).json({ message: 'Note not found' });
+    }
+
+// Update the database
+    db = newDb;
+
+    // Save the new database to the file
+    fs.writeFile('./db/db.json', JSON.stringify(db, null, 2), (err) => {
+        if (err) {
+            console.error(err);
+            return res.status(500).json({ message: 'Error deleting note' });
+        }
+
+        res.status(200).json({ message: 'Note deleted successfully' });
+    });
+
+})
 // ---------------------------------------------------------------------------
 // Start the server
 app.listen(port, () => {
