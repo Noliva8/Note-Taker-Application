@@ -21,7 +21,7 @@ Navigate to the homepage of the application and click on the "New Note" button, 
 
 ## License
 
-This project is licensed under the MIT license.
+This project is licensed under the MIT license. Note that: The front-end starter code provided by the school is also subject to the MIT License unless otherwise stated.
 
 ## Contributing
 We welcome contributions to improve the Note Taker application. Here are some guidelines to follow: Fork the Repository: Fork the repository to your GitHub account and clone it locally.  Create a new branch for your feature or bug fix. Make your changes, commit them with clear and concise messages. Push your changes to your forked repository. Submit a pull request to the main branch of the original repository. Provide a detailed description of your changes and reference any related issues.
